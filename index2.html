@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Transcriptions</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+navigator.mediaDevices.getUserMedia({audio:true}).then((dev) => {
+  document.getElementById('root').insertAdjacentHTML("beforeend", dev);
+  console.log(dev);
+})
+
+        navigator.mediaDevices
+    .enumerateDevices()
+    .then((devices) => {
+      devices.forEach((device) => {
+        document.getElementById('root').insertAdjacentHTML("beforeend", `${device.kind}: ${device.label} id = ${device.deviceId}<br>`);
+      });
+    })
+    .catch((err) => {
+      console.error(`${err.name}: ${err.message}`);
+    });
+    </script>
+  </body>
+</html>
