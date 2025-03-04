@@ -1,5 +1,6 @@
 // Based on sample from 
 // https://github.com/GoogleChromeLabs/web-audio-samples/blob/main/src/audio-worklet/migration/worklet-recorder/recording-processor.js
+console.log('starting registration')
 
 class RecordingProcessor extends AudioWorkletProcessor {
   constructor(options) {
