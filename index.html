@@ -4,25 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Live Transcriptions</title>
-  </head>
+    
+    <script type="module" crossorigin src="/translator/assets/index-8002fe91.js"></script>
+    <link rel="stylesheet" href="/translator/assets/index-71f670af.css">
+  <link rel="manifest" href="/translator/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/translator/registerSW.js"></script></head>
   <body>
     <div id="root"></div>
-    <script>
-navigator.mediaDevices.getUserMedia({audio:true}).then((dev) => {
-  document.getElementById('root').insertAdjacentHTML("beforeend", dev);
-  console.log(dev);
-})
-
-        navigator.mediaDevices
-    .enumerateDevices()
-    .then((devices) => {
-      devices.forEach((device) => {
-        document.getElementById('root').insertAdjacentHTML("beforeend", `${device.kind}: ${device.label} id = ${device.deviceId}<br>`);
-      });
-    })
-    .catch((err) => {
-      console.error(`${err.name}: ${err.message}`);
-    });
-    </script>
+    
   </body>
 </html>
